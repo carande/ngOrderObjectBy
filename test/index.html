@@ -55,6 +55,9 @@
     <thead>
       <tr>
         <th>
+          <a ng-click="setCriteria('objectID')">Object Key</a>
+        </th>
+        <th>
           <a ng-click="setCriteria('name')">Name</a>
         </th>
         <th>
@@ -76,6 +79,7 @@
       </tr>
     </thead>
     <tr ng-repeat="person in people | orderObjectBy : criteria : direction">
+      <td id="byKey">{{ person.objectID }}</td>
       <td id="byName">{{ person.name }}</td>
       <td id="byAge">{{ person.age }}</td>
       <td id="byPet">{{ person.pet }}</td>
