@@ -7,8 +7,9 @@
       .filter('orderObjectBy', function() {
         return function (items, field, reverse) {
           var filtered = [];
-          angular.forEach(items, function(item) {
-            filtered.push(item);
+          angular.forEach(items, function (item, key) {
+              item.objectID = key; // Need to keep info from object key
+              filtered.push(item);
           });
           function index(obj, i) {
             return obj[i];
